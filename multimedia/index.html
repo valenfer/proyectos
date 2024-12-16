@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 5</title>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+</head>
+<body>    
+    <div id="contenedor">
+        <header id="encabezado">
+            <h1>Estilos CSS Multimedia</h1>
+        </header>
+        <nav id="navegacion">
+            <!--Creamos lso distintos divs que haran las veces de los botones del menú-->
+            <div class="botones" id="transformbtn">
+                <!--Dentro de cada botón colocamos el texto mas otro div que hará de cortina-->
+                <a href="#transicion"><h2>Transform</h2></a>
+                <!--Dentro del div que hace de cortina debemos volver a poner el texto para que se pueda leer cuando cubra el div anterior -->
+                <div class="barras"><a href="#transicion"><h2>Transform</h2></a></div>
+            </div>
+
+            <div class="botones"  id="cssbtn">
+                <div class="barras"><a href="#css"><h2>CSS</h2></a></div>
+                <a href="#css"><h2>CSS</h2></a>
+            </div>
+            <div class="botones" id="canvasbtn">
+                <div class="barras"><a href="#canvas"><h2>CANVAS</h2></a></div>
+                <a href="#canvas"><h2>CANVAS</h2></a>
+            </div>
+            <div class="botones" id="svgbtn">
+                <div class="barras"><a href="#svg"><h2>SVG</h2></a></div>
+                <a href="#svg"><h2>SVG</h2></a>
+            </div>
+        </nav>   
+        <main id="contenidos">
+        <div id="transicion">
+            <h2 class="titulo">Transiciones / Transformaciones </h2>
+            <div id="imagenes">
+                <div class="divfoto" id="escalado">
+                    <img src="./img/imagina.jpg">
+                    <div class="textofoto">scale(0.5,0.5)</div>
+                </div>
+                <div class="divfoto" id="rotacion">
+                    <img src="./img/imagina.jpg">
+                    <div class="textofoto">rotate(90deg)</div>
+                </div>
+                <div class="divfoto" id="traslacion">
+                    <img src="./img/imagina.jpg">
+                    <div class="textofoto">translate(0px, 50px)</div>
+                </div>
+                <div class="divfoto" id="distorsion">
+                    <img src="./img/imagina.jpg">
+                    <div class="textofoto">skew(10deg, 25deg)</div>
+                </div>
+            </div>
+        </div>
+        <div id="css">
+            
+            
+            <h2 class="titulo">Animación con CSS</h2>
+            <!--Creamos el movil con cajas divs-->
+            <div id="movil">
+                <div id="pantalla">
+                </div>
+                <div id="onoff">
+                </div>
+            </div>
+            <!--Colocanos los elementos que formarán parte de las animaciones para que se carguen al cargar la página, con css se posicionarán de forma que no estorben ni creen espacios vacios en la web-->
+            <h1 id=saludo>Hola Valentín</h1>
+            <div id="imagen" ><img src="./img/imagina.jpg"/></div>
+            <h1 id="textoanimado">Viajes de ensueño</h1>
+        </div>
+        <div id="canvas">
+            <h2 class="titulo">Animación con CANVAS</h2>
+            <canvas id="triangulo" width="75" height="75" title="triangulo">
+                Este navegador no soporta canvas
+            </canvas>
+            <canvas id="textoCanvas" width="1200" height="75" title="textoCanvas">
+                Este navegador no soporta canvas
+            </canvas>
+            <canvas id="triangulo2" width="75" height="75" title="triangulo2">
+                Este navegador no soporta canvas
+            </canvas>
+
+        </div>
+        <div id="svg">
+            <h2 class="titulo">Animación con SVG</h2>
+            <div class="figuras">
+                <!--Se inicia código donde incluiremos todos los elementos SVG-->
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="260" height="260">
+                    <!-- Dibujamos la ruta -->
+                    <path d="m30 30 h150 v50 h-80 v50 h130 v50 h-200 v50 h230" style="stroke:yellow; stroke-width:3; fill:none;"></path>
+                    <!--Dibujamos el circulo -->
+                    <circle id="pelota" cx=10 cy=30 r=10 stroke="Yellow" stroke-width=1 fill="Yellow">
+                        <!---Definimos la animación que realizará el círculo, siguiendo la misma ruta que dibujamos anteriormente: En primer lugar posicionamos la bola al inicio de la ruta (m20 0)-->
+                        <animateMotion id="animacion_1" begin="pelota.click"  path="m20 0 h150 v50 h-80 v50 h130 v50 h-200 v50 h230" ;  dur="20s"  repeatCount="1"></animateMotion>
+                    </circle>
+                    <!--Dibujamos las paredes del laberinto-->
+                    <rect x="0" y="0" width="260" height="10"/>
+                    <rect x="200" y="10" width="10" height="100"/>
+                    <rect x="0" y="50" width="160" height="10"/>
+                    <rect x="120" y="100" width="90" height="10"/>
+                    <rect x="70" y="60" width="10" height="100"/>
+                    <rect x="80" y="150" width="130" height="10"/>
+                    <rect x="250" y="10" width="10" height="200"/>
+                    <rect x="50" y="200" width="210" height="10"/>
+                    <rect x="0" y="60" width="10" height="200"/>
+                    <rect x="0" y="250" width="260" height="10"/>
+                </svg>
+            </div>
+        </div>
+    </main>
+        <div id="pie" class="titulo">
+            <p>Tarea 5: Diseño de Interfaces Web / DAW: 2022/2023</p>
+            <p>I.E.S. Aguadulce / Autor: Valentín Fernández Guijarro</p>
+            <p>Imagen de <a href="https://pixabay.com/es/users/mrs_mahsa1995-18409686/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7882981">Mahsa Faramarzi</a> en <a href="https://pixabay.com/es//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7882981">Pixabay</a></p>
+        </div>
+        <script src="./script/canvas.js"></script>
+</body>
+</html>

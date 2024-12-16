@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 06</title>
+    <link rel="stylesheet" href="./css/tarea_06.css">
+    <!-- Link para la fuente de internet -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Righteous&display=swap">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+   
+</head>
+<body>
+   <!-- Barra de accesibilidad -->
+    <div class="barra">
+            <div class="barra_botones">
+                <button id="Expandir" type="button"><img class="icono" src="./icons/expandirBarra.svg" title="Expandir barra" alt="Expandir barra"></button>
+            <!-- Título de la barra-->
+                <p class="nombre_barra">Accesibilidad</p>
+                <!-- Botones y opciones de menú-->
+                <button id="Agrandar" type="button"><img class="icono" src="./icons/aumentar.svg" title="Aumentar texto" alt="Aumenta tamaño del texto"></button>  
+                <button id="Reducir" type="button"> <img class="icono" src="./icons/reducir.svg" title="Disminuir texto" alt="Disminuye tamalo del texto"></button>
+                <button id="Oscuro" type="button"> <img class="icono" src="./icons/modoOscuro.svg" title="Activar desactivar modo oscuro" alt="Modo oscuro"></button>
+                <button id="Simplificada" type="button"> <img class="icono" src="./icons/contraernoticias.svg" title="Simplificar noticia a títulos" alt="Titulares"></button>
+                <div class="seleccion_fuente">
+                    <label for="s_fuente">Fuente:</label>
+                    <select id="s_fuente">
+                        <option value="1">Verdana</option>
+                        <option value="2">Fuente Local</option>
+                        <option value="3">Fuente internet</option>
+                   </select>
+                </div>
+                <button id="UtimaHora" type="button"><img class="icono" src="./icons/news.svg" title="Ültima hora" alt="Ultima Hora"></button>  
+                <button id="Reset" type="button"> <img class="icono" src="./icons/resetear.svg" title="resetear" alt="Reset"></button>
+                <button id="Ocultar" type="button"> <img class="icono" src="./icons/contraerbarra.svg" title="Ocultar barra" alt="Oculta barra"></button>
+            </div>
+            <div id="infoTexto">
+                <p>Font-size: 14px</p>
+                <p>Máximo: 20px - Mínimo:14px</p>
+            </div>
+        
+    </div>
+   
+   <!-- Contenedor de la maqueta definida con un grid -->
+    <div class="contenedor">
+        <!-- Definimos la cabecera donde estará nuestra información personal-->
+        <header id="cabecera">
+            <h1 id="nombre">PRACTICA DE ACCESIBILIDAD</h1>
+        </header>    
+   
+        <!-- Zona de navegación con los enlaces a las diferentes noticias-->
+        <nav class="navegacion">
+            <ul>
+                <li><a class="linkNoticia" href="#noticia_1">Noticia 1</a></li>
+                <li><a class="linkNoticia" href="#noticia_2">Noticia 2</a></li>
+                <li><a class="linkNoticia" href="#noticia_3">Noticia 3</a></li>
+                <li><a class="linkNoticia" href="#noticia_4">Noticia 4</a></li>
+            </ul>
+        </nav>    
+ 
+        <!-- Zona de contenido con las noticias-->
+        <div class="noticias">
+            <div class="noticia" id="noticia_1">
+                <h2 class="texto titulo_noticia">LOS CEREBROS YA CRECEN EN LOS LABORATORIOS</h2>
+                <div class="contraer">
+                    <div class="cuerpo_noticia">
+                       <p class="texto">Los organoides cerebrales no pueden pensar igual que nosotros, pero sí abren la puerta a revolucionar la investigación y los tratamientos de enfermedades neurológicas Permiten pruebas que serían imposibles con cerebros humanos vivos y podrían ser una alternativa al uso de animales de laboratorio. La ciencia es capaz de cosas sorprendentes: se cortan y se pegan genes para conseguir, por ejemplo, mosquitos que no propaguen la malaria; se crean 'embriones quimera', híbridos entre humano y mono, para estudiar los primeros momentos de la vida; o se 'cultivan' todo tipo de órganos para probar medicamentos o entender enfermedades.  <a target="_blank" href="https://www.abc.es/ciencia/cerebros-crecen-laboratorios-20230519183044-nt.html?ref=https%3A%2F%2Fwww.abc.es%2Fciencia%2F">Enlace a la noticia</a></p>
+                    </div>
+                    <div class="imagen_noticia">
+                        <img class="imagen" src="./img/cerebro.jpg" alt="Imagen de la noticia">
+                        <p class="licencia">Imagen de <a href="https://pixabay.com/es/users/peggy_marco-1553824/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2714183">Peggy und Marco Lachmann-Anke</a> en <a href="https://pixabay.com/es//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2714183">Pixabay</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="noticia" id="noticia_2">
+                <h2 class="texto titulo_noticia">ASTRONOMOS CAPTAN LA MAYOR EXPLOSION COSMICA CONOCIDA</h2>
+                <div class="contraer">
+                <div class="cuerpo_noticia">
+                    <p class="texto">Un equipo de astrónomos dirigido por la británica Universidad de Southampton y con la participación del Instituto de Ciencias del Espacio (ICE-CSIC) ha descubierto la explosión cósmica más grande jamás presenciada: tiene 100 veces el tamaño del Sistema Solar, es 2 billones de veces más brillante que el Sol y existe desde hace 3 años. El evento, denominado AT2021lwx, podría haber sido causado por una estrella enorme o una nube de gas devorada por un agujero negro.<a target="_blank" href="https://www.abc.es/ciencia/astronomos-captan-mayor-explosion-cosmica-conocida-20230516122927-nt.html">Enlace a la noticia</p>
+                </div>
+                <div class="imagen_noticia">
+                    <img class="imagen" src="./img/explosion.png" alt="Imagen de la noticia">
+                    <p class="licencia">Imagen de <a href="https://pixabay.com/es/users/openclipart-vectors-30363/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=160080">OpenClipart-Vectors</a> en <a href="https://pixabay.com/es//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=160080">Pixabay</a></p>
+                </div>
+                </div>
+            </div>
+            <div class="noticia" id="noticia_3">
+                <h2 class="texto titulo_noticia">NUESTRO ADN, CON TODA NUESTRA INFORMACION GENETICA, ESTA AL ALCANCE DE CUALQUIERA</h2>
+                <div class="contraer">
+                <div class="cuerpo_noticia">
+                    <p class="texto">Desde hace un tiempo los científicos no tienen que buscar gotas de sangre o huesos antiguos para hallar ADN. Nosotros (y nuestros antepasados) llevamos miles de años tosiendo, escupiendo y derramando nuestro material genético por toda la Tierra. Y aún seguimos haciéndolo. Todo esto provoca que se puedan encontrar restos de vida humana en casi todas partes del globo: ﻿desde playas a océanos, viajando por los ríos, enterrados en el hielo, presentes en los desiertos... incluso flotando en el aire. Así lo atestigua el estudio de un grupo de científicos de la Universidad de Florida (EE.UU.) que acaba de publicarse en la revista 'Nature Ecology and Evolution'.<a target="_blank" href="https://www.abc.es/ciencia/adn-informacion-genetica-alcance-20230514190227-nt.html">Enlace a la noticia</p>
+                </div>
+                <div class="imagen_noticia">
+                    <img class="imagen" src="./img/adn.png" alt="Imagen de la noticia">
+                    <p class="licencia">Imagen de <a href="https://pixabay.com/es/users/gdj-1086657/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2789567">Gordon Johnson</a> en <a href="https://pixabay.com/es//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=2789567">Pixabay</a></a></p>
+                </div>
+                </div>
+            </div>
+            <div class="noticia" id="noticia_4">
+                <h2 class="texto titulo_noticia">SATURNO VUELVE A SUPERAR A JUPITER Y BATE RECORD DE LUNAS, CON 45</h2>
+                <div class="contraer">
+                <div class="cuerpo_noticia">
+                    <p class="texto">Saturno vuelve a tomar la delantera en el número de lunas descubierto a su alrededor, y se pone en cabeza con 145, superando ampliamente a Júpiter, que posee 92, según el último recuento. Este 'sorpasso' ha sido gracias al descubrimiento de 62 nuevos satélites, lo que además ha otorgado un nuevo récord al planeta anillado estrella: ser el primer mundo en superar el centenar de lunas. Durante las últimas dos décadas, los alrededores de Saturno han sido examinados repetidamente con tecnología cada vez más potente en busca de nuevas y aún no detectadas lunas. .<a target="_blank" href="https://www.abc.es/ciencia/saturno-vuelve-superar-jupiter-bate-record-lunas-20230517172441-nt.html">Enlace a la noticia</p>
+                </div>
+                <div class="imagen_noticia">
+                    <img class="imagen" src="./img/saturno.jpg" alt="Imagen de la noticia">
+                    <p class="licencia">Imagen de <a href="https://pixabay.com/es/users/wikiimages-1897/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=67671">WikiImages</a> en <a href="https://pixabay.com/es//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=67671">Pixabay</a></p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- Zona de pie -->
+        <div id="pie">
+            <div id="licencias">
+                <p><strong>Licencias: </strong>Esta web:<a target="_blank" href="https://creativecommons.org/licenses/by/4.0/"> CC BY 4.0 </a><img src="./img/cc.png"></p>
+                <p> / Iconos de barra: <a href="http://www.apache.org/licenses/LICENSE-2.0">Licencia Apache</a></p>
+            </div>
+            <div id="historico">
+                <strong>Histórico: </strong>
+            </div>
+        </div>
+    <div>
+
+    <!-- Enlace al fichero con jQuery -->        
+    <script src="./js/tarea_06.js"></script>
+</body>
+
+</html>

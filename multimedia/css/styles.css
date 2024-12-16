@@ -1,0 +1,382 @@
+
+
+
+#contenedor{/*Definimos la estructura grid con las secciones principales*/
+    display:grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-gap: 5px;
+    grid-template-areas:
+        "encabezado"
+        "navegacion"
+        "contenido"
+        "pie"
+}
+
+/**********************************Definimos estilos usados a lo largo de las distintas secciones************************************/
+.titulo{/*Centrado de los títulos de las secciones*/
+    text-align: center;
+}
+#navegacion a {/*Quitamos estilos de enlace por defecto al texto de los botones del menú*/
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
+/****************Definimos estilos a lo relativo al HEADER***************/
+#encabezado{
+    grid-area:encabezado;
+    font-size: 1em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: cyan;
+}
+#encabezado img{
+    width: 100px;
+    height: auto;
+}
+
+/***************Definimos estilos para la zona de navegación**************/
+#navegacion{
+    grid-area:navegacion;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: grey;
+}
+.botones{ /*Estilos para los botones*/
+    border:0px;
+    margin: 5px;
+    padding: 0px;
+    width: 150px;
+    height: 75px;
+    text-align: center;
+    color: white;
+    background-color: black;
+    position: relative;
+}
+.barras{ /*Estilos para las barras superiores en su estado inicial*/
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 10px;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    background-color: white;
+}
+
+#transformbtn div{/*Estilo diferenciado de la barra de cada botón*/
+    background-color:  blue;
+    position: absolute;
+}
+#transformbtn:hover div{/*transición de la barra al pasar sobre el botón*/
+    height: 100%;/*Cubre el div de cada botón*/
+    transition: 3s;/*Realiza la transición anterior en 3 segundos dando la sensación de cortinilla*/
+}
+#cssbtn div{/*Estilo diferenciado de la barra de cada botón*/
+    background-color:  orange;
+    position: absolute;
+}
+#cssbtn:hover div{/*transición de la barra al pasar sobre el botón*/
+    height: 100%;
+    transition: 3s;
+}
+#canvasbtn div{/*Estilo diferenciado de la barra de cada botón*/
+    background-color:  red;
+    position: absolute;
+}
+#canvasbtn:hover div{/*transición de la barra al pasar sobre el botón*/
+    height: 100%;
+    transition: 3s;
+}
+#svgbtn div{/*Estilo diferenciado de la barra de cada botón*/
+    background-color:  green;
+    position: absolute;
+}
+#svgbtn:hover div{/*transición de la barra al pasar sobre el botón*/
+    height: 100%;
+    transition: 3s;
+}
+/*******************Zona de contenidos *****************************/
+#contenido{
+    grid-area: contenido;
+}
+/***********Estilos para la zona de transiciones/transformaciones*********/
+#transicion{
+    display: flex;
+    flex-direction: column;
+    background-color: blue;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+}
+#transicion #imagenes{/*Situmaos las fotos*/
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.textofoto{/*Situamos el texto descriptivo de cada foto con el efecto aplicado*/
+    width: 170px;
+    margin-top: 15px;
+    text-align: center;
+    font-size: 1em;
+    color: white;
+    padding: 5px;
+}
+.divfoto{/*Definiimos los estilos de las fotos*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 5px;
+    width: 125px;
+    height: auto;
+}
+/********Estilos de las transformaciones*******/
+#escalado:hover{/*Estilos de las transfot¡rmaciones al pasar el retón por encima (hover)*/
+    transform: scale(0.5,0.5);
+    transition: 5s;
+}
+#rotacion:hover{
+    transform: rotate(90deg);
+    transition: 5s;
+}
+#traslacion:hover{
+    transform: translate(0px, 50px);
+    transition: 5s;
+}
+#distorsion:hover{
+    transform: skew(10deg, 25deg);
+    transition: 5s;
+}
+
+/************************ Definimos estilos para sección CSS*********/
+#css{
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    text-align: center;
+    background-color: yellow;
+}
+#movil{/*Estilos para el div que contiene el movil*/
+    margin: 0px auto;
+    display: flex;
+    border: 5px solid black;
+    border-radius: 5%;
+    background-color: grey;
+    width: 200px;
+    height: 350px;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: space-around;
+    animation-name: giro; /*Aplica la animación definida posteriormente*/
+    animation-duration: 4s;/*Tiempo que durará la animación*/
+    transition-timing-function:ease-in-out; /*la transición comienza y acaba lenta.*/
+    animation-iteration-count: 1;/*Número de veces que se realizará la animación*/
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+@keyframes giro {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(360deg);
+    }
+    75% {
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(90deg);
+    }
+}
+
+#pantalla{
+    width: 180px;
+    height: 300px;
+    background-color: white;
+    border: solid 3px black;
+    border-radius: 5%;
+}
+#saludo{/*Estilos para el texto de saludo*/
+    position:relative;
+    opacity: 0; /*Lo hacemos invisible*/
+    font-size: 1em;
+    /*En este caso se ha usado la versión en línea de todos los valores añadiendo animation-delay: 8s (al final)*/
+    /*En este caso, como el texto tiene que desaparecer de nuevo al final, no necesitamos usar forwards*/
+    animation: saludo 4s ease-in-out 7s;
+}
+
+@keyframes saludo {/*Animación para el saludo*/
+    0% {
+       opacity: 0;
+       transform: translate(-75px, -250px);/*Colocamos texto en posición inicial*/
+    }
+    50% {
+        opacity: 1;
+        transform: translate(10px, -120px);/*Colocamos texto en posición intermedia*/
+    }
+    100% {
+        opacity:0;
+        transform: translate(75px, -250px);/*Colocamos texto en posición final*/
+    }
+
+}
+
+#onoff{/*Estilos para el botón de encendido*/
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border: solid 1px black;
+    border-radius: 50%;
+    
+    /*Le aplicamos animation-delay (5s) para que comience tra la finalización de la animación anterior*/
+    animation-name: encendido; 
+    animation-duration: 2s;
+    animation-delay: 5s;
+    transition-timing-function:ease-in-out; 
+    animation-iteration-count: 1;
+    animation-direction: normal;/*Indicamos dirección normal para que respete el forward*/
+    animation-fill-mode: forwards/*Mantenemos los estilos del ultimo fotograma*/
+}
+@keyframes encendido {/*Animación del botón de encendido*/
+    0% {
+        transform: scale(0.5);
+    }
+    50% {
+        transform: scale(1.5);
+        background-color: blue;
+    }
+    100% {
+        transform: scale(1);
+        background-color: green;
+    }
+}
+    
+
+#imagen{/*Estilos para el contenedor de la imagen*/
+    /*Posicionamos la imagen de forma que no ocupe espacio dejando huecos mientras se hace visible*/
+    position: absolute;
+    z-index: 3;
+    left: 636px;
+    top: 725px;
+    margin:0px;
+    padding: 0px;
+    width: 300px;
+    height: 180px;
+    border-radius: 5%;
+    opacity: 0;/*La hacemos inv¡isible en principio*/
+    /*La iniciamos a los 12 segundos para que comience tras finalizar las animaciones anteriores*/
+    /*Con forwards hacemos que mantenga los valores del último fotograma*/
+    animation-name: imagen;
+    animation-delay: 12s;
+    animation-duration: 5s;
+    transition-timing-function:ease-in-out;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode:forwards;
+}
+#imagen img{/*Adaptamos tamaño del aimagen al contenedor que aus vez se adapta a la pantalla*/
+    border-radius: 5%;
+    width: 100%;
+    height:100%;
+}
+@keyframes imagen {/*Animación de la imagen*/
+    0%{ 
+        opacity: 0.10;/*Comienza a incrementar la opacidad*/
+        transform: scale(0.10);/*Comanzamos a aumentar el tamaño*/
+    }
+     25%{
+        opacity: 0.25;
+        transform: scale(0.25);
+    }
+     50%{
+        opacity: 0.50;
+        transform: scale(0.50);
+    }
+     75%{
+        opacity: 0.75;
+        transform: scale(0.75);
+    }
+     100%{
+        opacity: 1;/*Se vuelve opaco*/
+        transform: scale(1);/*Adquiere su tamaño ajustado a la pantalla*/
+        transform: translateY(-6px);/*Pequeño desplazamiento para que encaje en la pantalla*/
+    }
+}
+
+#textoanimado{
+    opacity: 0%;
+    position: absolute;
+    z-index: 3;
+    left: 660px;
+    top: 775px;
+    animation-name: animacionfinal;
+    animation-iteration-count: 1;
+    animation-duration: 5s;/*Misma duración que la animación de la imagen*/
+    animation-delay: 12s;/*Para que empiece al mismo tiempo que la animación de la imagen*/
+    transition-timing-function:ease-in-out;
+    animation-direction: normal;
+    animation-fill-mode:forwards;
+}
+
+@keyframes animacionfinal{
+    0%{
+        opacity: 0.10;
+        transform: scale(0.5) rotate(66deg) translate(-31px, -30px) ;
+    }
+      15%{
+        opacity: 0.15;
+        transform: scale(0.7) rotate(115deg) translate(-18px, -17px) ;
+    }
+      25%{
+        opacity: 0.25;
+       transform: scale(0.7) rotate(115deg) translate(-18px, -17px) ;
+    }
+      50%{
+        opacity: 0.50;
+        transform: scale(1.3) rotate(222deg) translate(13px, 12px) ;
+    }
+      65%{
+        opacity: 0.65;
+        transform: scale(1.6) rotate(283deg) translate(28px, 28px) ;
+    }
+      85%{
+        opacity: 0.85;
+       transform: scale(0.7) rotate(115deg) translate(-18px, -17px) ;
+    }
+      100%{
+        opacity: 1;
+        color: yellowgreen;
+        transform:none;
+    }
+}
+
+/************************ Definimos estilos para sección CANVAS*********/
+#canvas{
+    text-align: center;
+}
+
+
+/************************ Definimos estilos para sección SVG*********/
+#svg{
+    text-align: center;
+    padding: 5px;
+    background-color: green;
+}
+rect {/*Colorea de azul los rectágulos del laberinto en svg*/
+    fill: blue;
+}
+
+
+/*Definimos estilos para la zona de pie*/
+#pie{
+    grid-area:pie;
+    background-color: black;
+    color: white;
+    padding: 5px;
+}

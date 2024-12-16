@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Portal de Astronomía</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AstroTour</h1>
+        </header>
+        
+        <nav>
+            <button data-section="daily-image">Imagen del Día</button>
+            <button data-section="ephemerides">Efemérides</button>
+            <button data-section="planets">Sistema Solar</button>
+        </nav>
+
+        <main>
+            <!-- Sección Imagen del Día -->
+            <section id="daily-image" class="active">
+                
+                <div class="image-info">
+                    <h2>Imagen Astronómica del Día</h2>
+                    <h3 id="imageTitle"></h3>
+                    <p id="imageExplanation"></p>
+                </div>
+                <div class="image-container">
+                    <img id="nasaImage" src="" alt="Imagen NASA">
+                </div>
+            </section>
+
+            <!-- Sección Efemérides -->
+            <section id="ephemerides" style="display:none;">
+                <h2>Efemérides Astronómicas</h2>
+                <p id="location">Geolocalización: </p>
+                <ul id="ephemeridesList"></ul>
+                <p id="amanecer"><strong>Amanecer: </strong></p>
+                <p id="atardecer"><strong>Anochecer: </strong></p>
+            </section>
+
+            <!-- Sección Planetas -->
+            <section id="planets" style="display:none;">
+                <h2>Sistema Solar</h2>
+                <div class="planet-selector">
+                    <button data-planet="mercurio">Mercurio</button>
+                    <button data-planet="marte">Marte</button>
+                    <button data-planet="tierra">Tierra</button>
+                    <button data-planet="jupiter">Júpiter</button>
+                    <button data-planet="saturno">Saturno</button>
+                    <button data-planet="urano">Urano</button>
+                    <button data-planet="neptuno">Neptuno</button>
+                    <button data-planet="pluton">Plutón</button>
+                </div>
+                <div id="planetInfo"></div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,230 @@
+* {
+        box-sizing: border-box;
+        margin:0px;
+        padding:0px;
+}
+
+/* Definimos la fuente local */
+@font-face {
+      font-family: 'fuenteLocal'; 
+      src:url('./fuentes/Righteous-Regular.ttf') format('truetype');
+}
+/* Definimos la estructura de la maqueta con grid*/    
+.contenedor{
+    display:grid;
+    grid-template-areas:"cabecera"
+        "navegacion"
+        "noticias"
+        "pie";
+        
+    grid-template-columns: 80%;
+    grid-template-rows: auto auto  1fr auto;
+    grid-gap: 5px;
+    justify-content: center;
+    padding: 120px 20px 20px 20px;
+    
+}
+
+/* Asignamos cada una de las zonas de la maqueta*/
+
+
+/* Defininimo el estilo del encabezado */
+
+#cabecera{
+    grid-area:cabecera;
+    font-size: 1em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 3px solid green;
+    padding: 10px;
+}
+#cabecera img{
+    width: 90px;
+    height: auto;
+    border-radius: 20%;
+    box-shadow: 7px 7px 5px 0px rgba(199,187,199,1);
+}
+
+
+/* Definimos la zona de navegación */ 
+/* Con un flex y centramos los elementos */
+.navegacion{
+    grid-area:navegacion;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid green;
+    list-style: none;
+}
+
+.navegacion ul{
+    margin: 5px 5px;
+}
+
+.navegacion ul li{
+    display: inline;
+    text-align:center;
+    border: 3px solid olive;
+    padding: 0px 40px;
+}
+.navegacion li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+
+
+/* Definimos la zona de noticias*/
+
+.noticias{
+    grid-area:noticias;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid green 2px;
+}
+.noticia{
+    scroll-margin-top: 120px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    margin: 10px;
+    border: solid 2px green;
+    padding: 10p;
+}
+.contraer{
+    display: flex;
+    flex-direction: row;
+}
+
+.titulo_noticia{
+    
+    font-size: 16px;
+    text-align: center;
+}
+.texto{
+    font-size: 14px;
+    font-family:"verdana";
+    padding: 5px;
+    text-align: justify;
+}
+.titulo_noticia{
+    font-size: 16px;
+    text-align: center;
+}
+.imagen_noticia{
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.imagen{
+    width: 100px;
+    height: auto;
+    margin: 5px;
+}
+.licencia{
+    font-size: 8px;
+    margin-top: 5px;
+    text-align: center;
+}
+#pie{
+    grid-area:pie;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid green;
+}
+
+
+/* ---------------------------------------------------------------------------------------------------------------------- */
+/* Definimos la parte relacionada con la barra de accesibilidad, está fuera de la estructura del grid */
+.barra{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid green;
+    width: 100%;
+    background-color: blanchedalmond;
+}
+/* Definimos el estilo para la barra de botonoes */
+.barra_botones{
+    display:flex;
+    flex-direction: row;
+    
+}
+
+#infoTexto{
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    width: 100%;
+    justify-content: center;
+}
+#infoTexto p{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+    
+
+
+/* Definimos los estilos de la zona de navegación */
+.nombre_barra{
+    margin:auto 30px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Definimos el estilo de los botones de la barra.*/
+
+        
+button{
+    border: 2px solid grey;
+    padding:10px;
+    margin:5px;
+    border-radius: 20%;
+}
+.seleccion_fuente{
+    padding:10px;
+    margin:5px;
+}
+
+button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:50px;
+    height:50px;
+}
+
+.icono{
+    max-width: 100%;
+    max-height: 100%;
+}
+/*Definimos los estilos del modo oscuro*/
+.modoOscuro{
+    background-color: black;
+    color: white;
+}
+
+#historico{
+    border: solid 2px red;
+    width: 100%;
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+}
+#licencias{
+    display: flex;
+    align-items: space-around;
+}
+#licencias img{
+    margin-left: 10px;
+    margin-rigth: 10px;
+    width: 50px;
+    height: auto;
+}
+
